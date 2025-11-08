@@ -15,11 +15,12 @@ import fakeImage from "../../../../../public/assets/images/fakeImage.jpg";
 import CustomButton from "@/components/Button/Button";
 import { Dialog } from "@/components/ui/dialog";
 import UpdateStatus from "@/components/Modals/Parcel/UpdateStatus";
+import { configURL } from "@/Config/config";
 
 const SingleParcel = () => {
   const { parcelID } = useParams();
 
-  const apiUrl = process.env.NEXT_PUBLIC_PORT;
+  const apiUrl = configURL.url;
   const cookiesData = getCookie("fluxelio") ? JSON?.parse(getCookie("fluxelio") as string) : undefined;
   const Token = cookiesData?.data?.accessToken;
 
